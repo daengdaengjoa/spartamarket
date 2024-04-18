@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Marketplace - Profile</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">스파르타 마켓</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">Home</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'profile' user.username %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'add_item' %}">Write</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2>User Profile</h2>
+    <p>Username: {{ user.username }}</p>
+    <p>Joined at: {{ user.date_joined }}</p>
+    <p>Followers: {{ followers_count }}</p>
+    <p>Following: {{ following_count }}</p>
+    {% include 'marketplace/follow_button.html' %}
+
+    <h3>My Items</h3>
+    {% for item in items %}
+    <div>
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.description }}</p>
+        <p>Owner: {{ item.owner }}</p>
+        <p>Likes: {{ item.liked_by.count }}</p>
+        {% if request.user == item.owner %}
+        <a href="{% url 'edit_item' item.id %}">Edit</a>
+        <a href="{% url 'delete_item' item.id %}">Delete</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+
+
+    <h3>My Liked Items</h3>
+    {% for liked_item in liked_items %}
+    <div>
+        <h4>{{ liked_item.title }}</h4>
+        <p>{{ liked_item.description }}</p>
+        <p>Owner: {{ liked_item.owner }}</p>
+        <p>Likes: {{ liked_item.liked_by.count }}</p>
+        {% include 'marketplace/like_button.html' %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>

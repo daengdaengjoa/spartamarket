@@ -1,0 +1,17 @@
+{% load static %}
+
+{% if request.user.is_authenticated %}
+  {% with liked_users=item.liked_by.all %}
+    {% if request.user in liked_users %}
+      <form action="{% url 'unlike_item' item.id %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Unlike</button>
+      </form>
+    {% else %}
+      <form action="{% url 'like_item' item.id %}" method="post" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Like</button>
+      </form>
+    {% endif %}
+  {% endwith %}
+{% endif %}
