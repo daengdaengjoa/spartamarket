@@ -3,7 +3,7 @@
 <br>
 
 ## 👨‍🏫 Project Introduction
-This project is a platform for trading second-hand items. 
+- This project is a platform for trading second-hand items. 
 Users can register items, search for items, and view items registered by other users. 
 Additionally, users can like items and follow sellers. 
 Administrators have the ability to manage posts and comments. 
