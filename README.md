@@ -1,11 +1,13 @@
 # 🗣️Project: Spartamarket
-#### 영화 리뷰와 댓글로 소통하고, AI가 취향맞춤 영화 추천을 해주는 웹사이트
-
+#### This project is a second-hand item trading platform built with Django, allowing users to register, search, and interact with items, along with administrative management capabilities.
 <br>
 
 ## 👨‍🏫 Project Introduction
-CineChat은 영화 리뷰 작성과 그에 대한 댓글 작성, 그리고 Chat GPT를 통한 영화추천 기능을 제공합니다.
-
+This project is a platform for trading second-hand items. 
+Users can register items, search for items, and view items registered by other users. 
+Additionally, users can like items and follow sellers. 
+Administrators have the ability to manage posts and comments. 
+This allows users to conveniently participate in second-hand item transactions.
 <br>
 
 ## ⏲️ Development time
@@ -16,7 +18,7 @@ CineChat은 영화 리뷰 작성과 그에 대한 댓글 작성, 그리고 Chat 
 <br>
 
 ## 🧑‍🤝‍🧑 Development member
-- **김준수** : AI영화 추천 기능, 영화정보(포스터,평점,개봉일등)크롤링 및 DB업로드/출력, 전체글 페이지네이션, 초기 HTML 구조 제작  
+- **김준수**
 <br>
 
 ## 💻 Development Environment
@@ -31,7 +33,7 @@ CineChat은 영화 리뷰 작성과 그에 대한 댓글 작성, 그리고 Chat 
 ## ⚙️ Technology Stack
 - **Frontend** : HTML, CSS, JavaScript
 - **Backend** : Django
-- **Database ORMR** : SQLAlchemy
+- **Database ORMR** : Django ORM
 - **Idea Brainstorming Tools and Environments** : Slack, Zep, Notion, figma
 <br>
 
