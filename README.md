@@ -69,15 +69,19 @@ S.A. 노션 : https://www.notion.so/teamsparta/S-A-8-a04adb1fb1884d80aa92feea44f
 
 ## ✒️ API
 
-Endpoint	Method	Description	Request Body	Response Body
-/api/items/	GET	Get all items	N/A	Array of item objects
-/api/items/<item_id>/	GET	Get details of a specific item	N/A	Item object
-/api/items/	POST	Create a new item	JSON object with item details	Created item object
-/api/items/<item_id>/	PUT	Update details of a specific item	JSON object with updated item details	Updated item object
-/api/items/<item_id>/	DELETE	Delete a specific item	N/A	Success message
-/api/users/	GET	Get all users	N/A	Array of user objects
-/api/users/<user_id>/	GET	Get details of a specific user	N/A	User object
-/api/users/	POST	Create a new user	JSON object with user details	Created user object
+| Endpoint                 | Method | Description                        | Request Body                           | Response Body                          |
+|--------------------------|--------|------------------------------------|----------------------------------------|----------------------------------------|
+| `/api/items/`            | GET    | Get all items                      | N/A                                    | Array of item objects                  |
+| `/api/items/<item_id>/`  | GET    | Get details of a specific item     | N/A                                    | Item object                            |
+| `/api/items/`            | POST   | Create a new item                  | JSON object with item details          | Created item object                    |
+| `/api/items/<item_id>/`  | PUT    | Update details of a specific item  | JSON object with updated item details  | Updated item object                    |
+| `/api/items/<item_id>/`  | DELETE | Delete a specific item             | N/A                                    | Success message                        |
+| `/api/users/`            | GET    | Get all users                      | N/A                                    | Array of user objects                  |
+| `/api/users/<user_id>/`  | GET    | Get details of a specific user     | N/A                                    | User object                            |
+| `/api/users/`            | POST   | Create a new user                  | JSON object with user details          | Created user object                    |
+| `/api/users/<user_id>/`  | PUT    | Update details of a specific user  | JSON object with updated user details  | Updated user object                    |
+| `/api/users/<user_id>/`  | DELETE | Delete a specific user             | N/A                                    | Success message                        |
+
 /api/users/<user_id>/	PUT	Update details of a specific user	JSON object with updated user details	Updated user object
 /api/users/<user_id>/	DELETE	Delete a specific user	N/A	Success message
 
