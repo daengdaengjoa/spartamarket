@@ -7,20 +7,22 @@ from .forms import ItemForm, UserCreationWithEmailForm
 from django.db.models import Count
 
 
-
 def index(request):
-    sort_by = request.GET.get('sort', None)
+    sort_by = request.GET.get("sort", None)
 
-    if sort_by == 'popular':
-        items = Item.objects.order_by('-view_count')
-    elif sort_by == 'newest':
-        items = Item.objects.order_by('-created_at')
-    elif sort_by == 'liked':
-        items = Item.objects.annotate(like_count=Count('liked_by')).order_by('-like_count')
+    if sort_by == "popular":
+        items = Item.objects.order_by("-view_count")
+    elif sort_by == "newest":
+        items = Item.objects.order_by("-created_at")
+    elif sort_by == "liked":
+        items = Item.objects.annotate(like_count=Count("liked_by")).order_by(
+            "-like_count"
+        )
     else:
-        items = Item.objects.order_by('-created_at')
+        items = Item.objects.order_by("-created_at")
 
-    return render(request, "marketplace/index.html", {'items': items})
+    return render(request, "marketplace/index.html", {"items": items})
+
 
 @login_required
 def profile(request, username):
@@ -47,7 +49,7 @@ def profile(request, username):
 def item_detail(request, item_id):
     item = get_object_or_404(Item, pk=item_id)
     liked_items = Item.objects.filter(liked_by=request.user)
-    item.view_count += 1  
+    item.view_count += 1
     item.save()
     return render(
         request,

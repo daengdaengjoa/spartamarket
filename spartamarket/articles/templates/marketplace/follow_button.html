@@ -1,15 +1,15 @@
 {% load static %}
 
 {% if not user == request.user %}
-  {% if request.user in user_profile.followed_by.all %}
-    <form action="{% url 'unfollow_user' user.username %}" method="post" style="display: inline;">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-danger">Unfollow</button>
-    </form>
-  {% else %}
-    <form action="{% url 'follow_user' user.username %}" method="post" style="display: inline;">
-      {% csrf_token %}
-      <button type="submit" class="btn btn-primary">Follow</button>
-    </form>
-  {% endif %}
+{% if request.user in user_profile.followed_by.all %}
+<form action="{% url 'unfollow_user' user.username %}" method="post" style="display: inline;">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Unfollow</button>
+</form>
+{% else %}
+<form action="{% url 'follow_user' user.username %}" method="post" style="display: inline;">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary">Follow</button>
+</form>
+{% endif %}
 {% endif %}
