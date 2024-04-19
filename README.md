@@ -12,8 +12,6 @@ This allows users to conveniently participate in second-hand item transactions.
 
 ## ⏲️ Development time
 - 2024.04.15(월) ~ 2023.04.19(금)
-- 아이디어 노트 작성
-- 와이어프레임 및 SA문서 작성
 - 기능구현
 <br>
 
@@ -38,8 +36,7 @@ This allows users to conveniently participate in second-hand item transactions.
 <br>
 
 ## 📝 Project Architecture
-S.A. 노션 : https://www.notion.so/teamsparta/S-A-8-a04adb1fb1884d80aa92feea44fb70d0
-![image](https://github.com/daengdaengjoa/Team-8/assets/157565164/a8ab58ef-e818-44f3-a27e-32b8c3ed7c40)
+![image](https://github.com/daengdaengjoa/spartamarket/assets/156053546/7c839299-8dc0-4c2c-a4a4-741d5dd3945f)
 
 <br>
 
