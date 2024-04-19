@@ -38,11 +38,11 @@ This allows users to conveniently participate in second-hand item transactions.
 ## 📝 Project Architecture
 ### main page
 ![image](https://github.com/daengdaengjoa/spartamarket/assets/156053546/0ab16084-944e-4af1-847e-cbbc0c32c1b9)
-###main page
+### profile page
 ![image](https://github.com/daengdaengjoa/spartamarket/assets/156053546/8bb6c6d5-34cd-49f6-9d88-ed85f3a5f672)
-###main page
+### writing page
 ![image](https://github.com/daengdaengjoa/spartamarket/assets/156053546/85edb781-4220-4865-b609-b70e8043874e)
-###main page
+### Item detail page
 ![image](https://github.com/daengdaengjoa/spartamarket/assets/156053546/fce7b08f-a3fe-476b-9495-6c63097a2ff4)
 
 
