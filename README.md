@@ -82,7 +82,4 @@ S.A. 노션 : https://www.notion.so/teamsparta/S-A-8-a04adb1fb1884d80aa92feea44f
 | `/api/users/<user_id>/`  | PUT    | Update details of a specific user  | JSON object with updated user details  | Updated user object                    |
 | `/api/users/<user_id>/`  | DELETE | Delete a specific user             | N/A                                    | Success message                        |
 
-/api/users/<user_id>/	PUT	Update details of a specific user	JSON object with updated user details	Updated user object
-/api/users/<user_id>/	DELETE	Delete a specific user	N/A	Success message
-
 - API 명세서 : <>
