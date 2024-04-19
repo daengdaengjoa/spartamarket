@@ -1,5 +1,5 @@
 # 🗣️Project: Spartamarket
-#### This project is a second-hand item trading platform built with Django, allowing users to register, search, and interact with items, along with administrative management capabilities.
+#### - This project is a second-hand item trading platform built with Django, allowing users to register, search, and interact with items, along with administrative management capabilities.
 <br>
 
 ## 👨‍🏫 Project Introduction
