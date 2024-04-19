@@ -5,8 +5,10 @@ class Item(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
     title = models.CharField(max_length=100)
     description = models.TextField()
-    price = models.DecimalField(max_digits=10, decimal_places=2, default=0)  # 가격 필드 추가
-    liked_by = models.ManyToManyField(User, through='LikedItem', related_name='liked_items')  # LikedItem 모델과의 관계 추가
+    price = models.DecimalField(max_digits=10, decimal_places=2, default=0) 
+    liked_by = models.ManyToManyField(User, through='LikedItem', related_name='liked_items')  
+    view_count = models.IntegerField(default=0)  
+
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
