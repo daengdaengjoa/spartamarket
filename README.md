@@ -3,6 +3,7 @@
 <br>
 
 ## 🔧 Project Update Summary
+- made improvements to the profile page to display liked items. Now, users can see a list of items they have liked on their profile page.
 - latest update introduces a token-based authentication system, ensuring secure user authentication during signup, login, and profile access. Additionally, we've clarified mandatory and optional fields during signup, enhanced login security, and restricted profile access to logged-in users for improved privacy.
 <br>
 
