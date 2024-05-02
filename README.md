@@ -17,6 +17,7 @@ This allows users to conveniently participate in second-hand item transactions.
 
 ## ⏲️ Development time
 - 2024.04.15(월) ~ 2023.04.19(금)
+- update: ~ 2023.05.02(목)
 - 기능구현
 <br>
 
