@@ -72,7 +72,7 @@ This allows users to conveniently participate in second-hand item transactions.
 -User authentication is required for creating, editing, or deleting items, as well as accessing certain features like user profiles.
 -Administrators have special permissions to manage user accounts and listings, ensuring platform integrity.
 ### 8. User Interaction
--Users can interact with each other through likes, follows, and comments on items and user profiles, fostering a sense of community within the platform.
+-Users can interact with each other through likes, follows, and comments on items and user profiles, fostering a sense of community within the platform..
      
 
 <br> 
