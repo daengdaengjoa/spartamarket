@@ -101,7 +101,6 @@
                 <p>{{ liked_item.description }}</p>
                 <p>Owner: {{ liked_item.owner }}</p>
                 <p>Likes: {{ liked_item.liked_by.count }}</p>
-                {% include 'marketplace/like_button.html' %}
             </div>
             {% endfor %}
         </div>

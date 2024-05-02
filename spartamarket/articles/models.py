@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
+
 class Item(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
     title = models.CharField(max_length=100)
@@ -24,11 +25,11 @@ class LikedItem(models.Model):
     class Meta:
         unique_together = ('user', 'item')
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     followed_by = models.ManyToManyField(User, related_name='following')
-    liked_items = models.ManyToManyField(Item, related_name='liked_by_users')
+    def liked_items(self):
+        return [liked_item.item for liked_item in LikedItem.objects.filter(user=self.user)]
     
     
 class UserToken(models.Model):

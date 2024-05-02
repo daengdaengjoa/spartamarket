@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .models import Item, UserProfile
+from .models import Item, UserProfile, LikedItem
 from .forms import ItemForm, UserCreationWithEmailForm
 from django.db.models import Count
 from django.http import JsonResponse
@@ -31,9 +31,9 @@ def index(request):
 @login_required
 def profile(request, username):
     user = get_object_or_404(User, username=username)
-    user_profile = UserProfile.objects.get_or_create(user=user)[0]
+    user_profile, created = UserProfile.objects.get_or_create(user=user)
     items = user.items.all()
-    liked_items = user_profile.liked_items.all()
+    liked_items = user_profile.liked_items()  # 메서드 호출로 수정
     followers_count = user_profile.followed_by.count()
     following_count = user.following.count()
     return render(
@@ -47,7 +47,6 @@ def profile(request, username):
             "following_count": following_count,
         },
     )
-
 
 @login_required
 def item_detail(request, item_id):
