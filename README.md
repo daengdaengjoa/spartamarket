@@ -1,5 +1,9 @@
-# 🗣️Project: Spartamarket
+# 🗣️Project: Spartamarket 2.0
 - This project is a second-hand item trading platform built with Django, allowing users to register, search, and interact with items, along with administrative management capabilities.
+<br>
+
+## 🔧 Project Update Summary
+- latest update introduces a token-based authentication system, ensuring secure user authentication during signup, login, and profile access. Additionally, we've clarified mandatory and optional fields during signup, enhanced login security, and restricted profile access to logged-in users for improved privacy.
 <br>
 
 ## 👨‍🏫 Project Introduction
