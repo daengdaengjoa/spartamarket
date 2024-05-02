@@ -33,7 +33,7 @@ def profile(request, username):
     user = get_object_or_404(User, username=username)
     user_profile, created = UserProfile.objects.get_or_create(user=user)
     items = user.items.all()
-    liked_items = user_profile.liked_items()  # 메서드 호출로 수정
+    liked_items = user_profile.liked_items()  # Like item 나오게 수정 (메서드 호출로)
     followers_count = user_profile.followed_by.count()
     following_count = user.following.count()
     return render(
