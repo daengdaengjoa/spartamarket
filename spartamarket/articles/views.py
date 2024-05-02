@@ -5,6 +5,10 @@ from django.contrib.auth import authenticate, login, logout
 from .models import Item, UserProfile
 from .forms import ItemForm, UserCreationWithEmailForm
 from django.db.models import Count
+from django.http import JsonResponse
+from rest_framework.authtoken.models import Token
+from django.middleware.csrf import get_token
+
 
 
 def index(request):
@@ -133,15 +137,17 @@ def unlike_item(request, item_id):
 
 def custom_login(request):
     if request.method == "POST":
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            return redirect("index")
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        if username is not None and password is not None:
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                token, created = Token.objects.get_or_create(user=user)
+                response_data = {"token": token.key, "csrf_token": get_token(request)}
+                return redirect("index")
     return render(request, "accounts/login.html")
-
-
+    
 def custom_logout(request):
     logout(request)
     return redirect("index")
@@ -151,6 +157,14 @@ def custom_register(request):
     if request.method == "POST":
         form = UserCreationWithEmailForm(request.POST)
         if form.is_valid():
+            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
+            if User.objects.filter(username=username).exists():
+                form.add_error('username', '이미 사용 중인 사용자 이름입니다.')
+                return render(request, "accounts/register.html", {"form": form})
+            if User.objects.filter(email=email).exists():
+                form.add_error('email', '이미 사용 중인 이메일 주소입니다.')
+                return render(request, "accounts/register.html", {"form": form})
             form.save()
             return redirect("login")
     else:

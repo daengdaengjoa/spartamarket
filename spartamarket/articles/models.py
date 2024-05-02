@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from rest_framework.authtoken.models import Token
 
 class Item(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='items')
@@ -28,3 +29,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     followed_by = models.ManyToManyField(User, related_name='following')
     liked_items = models.ManyToManyField(Item, related_name='liked_by_users')
+    
+    
+class UserToken(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    token = models.OneToOneField(Token, on_delete=models.CASCADE)
